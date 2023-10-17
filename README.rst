@@ -1,4 +1,4 @@
-Python Pause
+Python Asyncio Pause (based on [python-pause](https://github.com/jgillick/python-pause))
 ===============
 
 Suspend the execution of your program for a given amount of time using asyncio. This works similarly to ``time.sleep``, but uses your computers timestamp to track time, versus a counter.
