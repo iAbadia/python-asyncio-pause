@@ -1,17 +1,17 @@
 from distutils.core import setup
 
 setup(
-    name='pause',
-    version='0.3',
+    name='asyncio-pause',
+    version='0.4',
     license='LICENSE.txt',
-    author='Jeremy Gillick',
+    author='Jeremy Gillick - Inaki Abadia',
     author_email='none@none.com',
-    packages=['pause', 'pause.tests'],
-    url='https://github.com/jgillick/python-pause',
-    description='A timestamp-based sleep function for Python.',
+    packages=['asyncio-pause', 'asyncio-pause.tests'],
+    url='https://github.com/iAbadia/python-asyncio-pause',
+    description='A timestamp-based sleep function for Python using asyncio.',
     long_description=open('README.rst').read(),
     platforms='osx, posix, linux, windows',
-    keywords='sleep timestamp datetime',
+    keywords='sleep timestamp datetime asyncio',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'License :: OSI Approved :: MIT License',

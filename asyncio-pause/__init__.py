@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 
 """
-Suspend the execution of your program for a given amount of time.
+Suspend the execution of your program for a given amount of time using asyncio.
 This works similarly to ``time.sleep``, but uses your computers timestamp to track time, versus a counter.
 """
 
 """
 The MIT License (MIT)
 
-Copyright (c) 2013 Jeremy Gillick
+Copyright (c) 2023 Jeremy Gillick - Inaki Abadia
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -32,11 +32,11 @@ THE SOFTWARE.
 import sys
 from datetime import datetime
 import time as pytime
-from time import sleep
+import asyncio
 if sys.version_info[0] >= 3:
             from datetime import timezone
 
-def until(time):
+async def until(time):
     """
     Pause your program until a specific end time.
     'time' is either a valid datetime object or unix timestamp in seconds (i.e. seconds since Unix epoch)
@@ -68,55 +68,55 @@ def until(time):
             break
         else:
             # 'logarithmic' sleeping to minimize loop iterations
-            sleep(diff / 2)
+            await asyncio.sleep(diff / 2)
 
 
-def milliseconds(num):
+async def milliseconds(num):
     """
     Pause for this many milliseconds
     """
-    seconds(num / 1000.0)
+    await seconds(num / 1000.0)
 
 
-def seconds(num):
+async def seconds(num):
     """
     Pause for this many seconds
     """
     now = pytime.time()
     end = now + num
-    until(end)
+    await until(end)
 
 
-def time(num):
+async def time(num):
     """
     Same as PauseFor.seconds()
     """
-    seconds(num)
+    await seconds(num)
 
 
-def minutes(num):
+async def minutes(num):
     """
     Pause for this many minutes
     """
-    seconds(60 * num)
+    await seconds(60 * num)
 
 
-def hours(num):
+async def hours(num):
     """
     Pause for this many hours
     """
-    minutes(60 * num)
+    await minutes(60 * num)
 
 
-def days(num):
+async def days(num):
     """
     Pause for this many days
     """
-    hours(24 * num)
+    await hours(24 * num)
 
 
-def weeks(num):
+async def weeks(num):
     """
     Pause for this many weeks
     """
-    days(7 * num)
+    await days(7 * num)

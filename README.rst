@@ -1,7 +1,7 @@
 Python Pause
 ===============
 
-Suspend the execution of your program for a given amount of time. This works similarly to ``time.sleep``, but uses your computers timestamp to track time, versus a counter.
+Suspend the execution of your program for a given amount of time using asyncio. This works similarly to ``time.sleep``, but uses your computers timestamp to track time, versus a counter.
 
 For example, traditionally using ``time.sleep(3600)``, will pause the program for 60 minutes. If your computer goes into standby mode during minute one, and wakes up several hours later, your program will continue to be paused for 59 minutes.
 
@@ -28,7 +28,7 @@ Download the source code and run the following command::
 
 Or, without downloading, install with `pip <http://www.pip-installer.org/en/latest/>`_::
 
-     sudo pip install pause
+     sudo pip install asyncio-pause
 
 
 Examples:
@@ -36,34 +36,34 @@ Examples:
 
 Pause for half a second::
 
-    import pause
-    pause.milliseconds(500)
+    import asyncio-pause
+    await pause.milliseconds(500)
 
 Or::
 
-    import pause
-    pause.seconds(0.5)
+    import asyncio-pause
+    await pause.seconds(0.5)
 
 Pause for 1 minute::
 
-    import pause
-    pause.minutes(1)
+    import asyncio-pause
+    await pause.minutes(1)
 
 Pause for 2 days::
 
-    import pause
-    pause.days(2)
+    import asyncio-pause
+    await pause.days(2)
 
 Pause until a unix time, with millisecond precision::
 
-    import pause
-    pause.until(1370640569.7747359)
+    import asyncio-pause
+    await pause.until(1370640569.7747359)
 
 Pause using datetime::
 
-    import pause, datetime
+    import asyncio-pause, datetime
     dt = datetime.datetime(2013, 6, 2, 14, 36, 34, 383752)
-    pause.until(dt)
+    await pause.until(dt)
 
 
 Functions
