@@ -2,11 +2,11 @@ from distutils.core import setup
 
 setup(
     name='asyncio-pause',
-    version='0.4',
+    version='0.5',
     license='LICENSE.txt',
     author='Jeremy Gillick - Inaki Abadia',
     author_email='none@none.com',
-    packages=['asyncio-pause', 'asyncio-pause.tests'],
+    packages=['asyncio_pause', 'asyncio_pause.tests'],
     url='https://github.com/iAbadia/python-asyncio-pause',
     description='A timestamp-based sleep function for Python using asyncio.',
     long_description=open('README.rst').read(),
