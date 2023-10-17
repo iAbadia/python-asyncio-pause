@@ -1,5 +1,5 @@
 Python Asyncio Pause
-===============
+====================
 
 Based on https://github.com/jgillick/python-pause
 

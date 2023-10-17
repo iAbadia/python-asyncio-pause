@@ -10,6 +10,7 @@ setup(
     url='https://github.com/iAbadia/python-asyncio-pause',
     description='A timestamp-based sleep function for Python using asyncio.',
     long_description=open('README.rst').read(),
+    long_description_content_type='text/x-rst',
     platforms='osx, posix, linux, windows',
     keywords='sleep timestamp datetime asyncio',
     classifiers=[
